@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Topic(models.Model):  # 继承自Model
@@ -6,6 +7,8 @@ class Topic(models.Model):  # 继承自Model
 	text = models.CharField(max_length=200)  # 属性text是由字符组成的数据 即文本（少量数据）
 	date_added = models.DateTimeField(auto_now_add=True)  # 记录日期和时间的数据
 	# 每当用户创建新主题时，Django会将这个属性自动设置为当前日期和时间
+
+	owner = models.ForeignKey(User, on_delete=models.CASCADE)  # 建立外键关联
 
 	def __str__(self):
 		"""返回模型的字符串表示"""
@@ -23,4 +26,4 @@ class Entry(models.Model):
 
 	def __str__(self):
 		"""返回模型的字符串表示"""
-		return f"{self.text[:50]}..."
+		return f"{self.text[:30]}..."

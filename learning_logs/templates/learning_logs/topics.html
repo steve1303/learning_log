@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  <p>Topics</p>
+  <p>Topics(主题)</p>
 
   <ul>
     {% for topic in topics %}
@@ -13,5 +13,7 @@
       <li>No topics have been added yet.</li>
     {% endfor %}
   </ul>
+
+  <a href="{% url 'learning_logs:new_topic' %}">Add a new topic(添加一个新主题)</a>
 
 {% endblock content %}
