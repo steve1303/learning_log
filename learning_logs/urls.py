@@ -4,13 +4,13 @@ from django.urls import path  # 导入path 将URL映射到视图
 
 from . import views  # 导入模块views 句点. 让python从当前urls.py 模块所在的文件夹导入views.py
 
-app_name = 'learning_logs'  # 命名空间
+app_name = 'learning_logs'  # 命名空间  name 属性指定别名
 urlpatterns = [
 	# 主页
 	path('', views.index, name='index'),
 	# 显示所有主题
 	path('topics/', views.topics, name='topics'),
-	# 特定主题的详细页面
+	# 特定主题的详细页面 在主页URL的字符串参数中添加topic/
 	path('topics/<int:topic_id>/', views.topic, name='topic'),
 	# 用于添加新主题的页面
 	path('new_topic/', views.new_topic, name='new_topic'),

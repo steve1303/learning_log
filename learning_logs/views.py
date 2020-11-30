@@ -17,10 +17,10 @@ def index(request):  # 视图函数
 
 @login_required
 def topics(request):
-	"""显示所有的主题"""
-	topics = Topic.objects.filter(owner=request.user).order_by('date_added')
+	"""显示所有的主题 处理URL匹配的页面的请求"""
+	topics = Topic.objects.filter(owner=request.user).order_by('date_added') # 排序
 	context = {'topics': topics}   # 定义上下文字典
-	return render(request, 'learning_logs/topics.html', context)
+	return render(request, 'learning_logs/topics.html', context)  # 第二个参数是模板（html）路径
 
 
 @login_required

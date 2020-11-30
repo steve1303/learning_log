@@ -1,6 +1,16 @@
 {% extends "learning_logs/base.html" %}
 
-{% block content %}
-  <p>Learning Log helps you keep track of your learning, for any topic you're learning about.
-    (学习日志可帮助您跟踪正在学习的任何主题的学习情况。)</p>
-{% endblock content %}
+{% block page_header %}
+  <div class="jumbotron">
+    <h1 class="display-3">Track your learning.</h1>
+
+    <p class="lead">Make your own Learning Log, and keep a list of the
+        topics you're learning about. Whenever you learn something new
+        about a topic, make an entry summarizing what you've learned.
+        （做你自己的学习日志，把你正在学习的主题列一个清单。每当你对某个主题有新的了解时，
+        记下你所学的东西。）</p>
+
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+        role="button">Register &raquo;</a>
+  </div>
+{% endblock page_header %}
